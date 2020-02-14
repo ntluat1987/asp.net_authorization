@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Authorization</h1>
+  <section>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <p>User is authenticated</p>
+    }
+    else
+    {
+      <p>User is not authenticated</p>
+    }
+  </section>
+  <section>
+      <label for="users">User:</label>
+      <select id="users" name="username" form="userform">
+        <option value="john">John Doe</option>
+        <option value="sam">Sam Smith</option>
+      </select><br>
+      <form style="margin-top: 10px;" asp-action="Register" method="post" id="userform">
+        <button type="submit">Register</button>
+      </form>
+  </section>
+</body>
+</html>

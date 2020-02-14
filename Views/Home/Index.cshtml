@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Home Page</h1>
+  <section>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <p style="color: #437545;">Authenticated</p>
+    }
+    else
+    {
+      <p style="color: #FE3523;">NOT Authenticated</p>
+    }
+  </section>
+  <section>
+    <h3>Access to protected pages</h3>
+    <button type="button" style="margin-top: 10px;"><a asp-action="Protected">Access for Authenticated Users Only</a></button><br />
+    <button type="button" style="margin-top: 10px;"><a asp-action="PolicyProtected">Policy Protected Page</a></button><br />
+    <button type="button" style="margin-top: 10px;"><a asp-action="SecretLevel">Access with Secret Level 4</a></button><br />
+    <button type="button" style="margin-top: 10px;"><a asp-action="TopSecretLevel">Access with Secret Level 8</a></button>
+  </section>
+  <section>
+    <button type="button" style="margin-top: 10px;"><a asp-action="SignOut">Sign Out</a></button>
+  </section>
+</body>
+</html>

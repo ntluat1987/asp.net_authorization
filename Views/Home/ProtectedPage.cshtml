@@ -1,0 +1,30 @@
+﻿
+@model ViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>@Model.Header</h1>
+  <section>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <p style="color: #437545;">User: @User.Identity.Name Authenticated</p>
+    }
+    else
+    {
+      <p style="color: #FE3523;">User NOT Authenticated</p>
+    }
+  </section>
+  <section>
+    <p>@Model.Description</p>
+  </section>
+  <section>
+    <a asp-action="Index"><h4>Home</h4></a>
+  </section>
+</body>
+</html>
